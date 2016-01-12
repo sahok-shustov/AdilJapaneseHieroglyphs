@@ -1,0 +1,70 @@
+<ion-view cache-view="false" view-title="Тест">
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <!-- {{hostAdress}} {{ieroglif[0].ieroglif_icon_china_var}} -->
+        <!-- <div style="text-align: center">
+            <div class="numberOfCountHieroglif">
+                <p>№ <b>{{id_hieroglyph}}</b> из <b>{{count_ieroglif}}</b>
+            </div>
+            <div class="smallRound">
+                <img ng-src="{{hostAdress}}/img/{{ieroglif[0].ieroglif_icon_china_var}}">
+            </div>
+        </div> -->
+        <div class="smallRound">
+               <!--  <p>
+                    <span> -->
+          
+                        <img ng-src="{{hostAdress}}/img/{{ieroglif[0].ieroglif_icon_china_var}}">
+   
+                   <!--  </span>
+                </p> -->
+            </div>
+            <div class="numberOfCountHieroglif">
+                <p>№ <b>{{id_hieroglyph}}</b> из <b>{{count_ieroglif}}</b></p>
+            </div>
+        <ion-scroll delegate-handle="small" class="testContainerScroll">
+            <form>
+                <div class="testContent">
+                    <ion-list ng-repeat="item in test">
+                        <div>
+                            <div ng-if="isString(item)" class="testTitle">
+                                <br><b>{{item}}</b></div>
+                            <ion-checkbox ng-if="isObject(item)" class="testItem" ng-model="item.cheked" ng-click="addToCurrentAnswer(item.vopros_id, item.otvet_id, item.cheked)">{{item.otvet_otvet}}</ion-checkbox>
+                        </div>
+                    </ion-list>
+                </div>
+            </form>
+        </ion-scroll>
+        <div class="buttonCenter">
+            <a ng-href=""  class="button around-hand" ng-hide="id_hieroglyph == ieroglif[0].level_count_ieroglif" ng-click="forChecking(); nextTest(id_hieroglyph); scrollSmallToTop()" style="margin-top: 10%; color: #5b3536;"><img src="img/hand.png" class="imageHand">&nbsp;<b>Далее</b>&nbsp;&nbsp;</a>
+        </div>
+        <div class="buttonCenter">
+            <a ng-href=""  class="button around-hand" ng-show="id_hieroglyph == ieroglif[0].level_count_ieroglif" ng-click="forChecking(); checkAllTests()" style="margin-top: 10%; color: #5b3536;"><img src="img/hand.png" class="imageHand">&nbsp;<b>Завершить тест</b>&nbsp;&nbsp;</a>
+        </div>
+        <div class="buttonCenter">
+            <a class="button around" ng-href="#/app/testresults/{{ test_id_level }}" style="margin-top: 3%; color: #5b3536;">&nbsp;<b>Пропустить тест и продолжить</b>&nbsp;</a>
+        </div>
+
+         <div class="buttonCenter">
+            <a class="button around-hand" ng-click="checkAllTests()" ng-href="" style="margin-top: 10%; color: #5b3536;"><img src="img/hand.png" class="imageHand">&nbsp;<b>Проверка тестов</b>&nbsp;&nbsp;</a>
+        </div>
+        <!-- <ul class="list">
+            <li class="item" ng-repeat="slide in slides">
+                <p>{{slide.slide1_1}}</p>
+                <p>{{slide.slide2_1}}</p>
+                <p>{{slide.slide3_1}}</p>
+            </li>
+        </ul> -->
+    </ion-content>
+    <!-- <ion-content delegate-handle="mainScroll">
+    
+    <button ng-click="scrollMainToTop()">
+      Scroll content to top!
+    </button>
+    <ion-scroll delegate-handle="small" style="height: 100px;">
+    
+      <button ng-click="scrollSmallToTop()">
+        Scroll small area to top!
+      </button>
+    </ion-scroll>
+      </ion-content> -->
+</ion-view>

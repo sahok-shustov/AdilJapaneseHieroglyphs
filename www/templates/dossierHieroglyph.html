@@ -1,0 +1,75 @@
+<ion-view cache-view="true" view-title="Досье иероглифа">
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <ion-tabs class="tabs-striped tabs-top tabs-background-dark" style="position:relative">
+            <ion-tab title="Написание" ui-sref="write">
+                <ion-nav-view class="tabs-padd gifWriting" name="write">
+                    <img class="GifBorder" ng-src="http://japan.dev-topsu.ru/img/{{ gifImage[0].ieroglif_gif }}">
+                    <ion-scroll delegate-handle="small" class="contentWrite">
+                       <p>
+                            {{ gifImage[0].ieroglif_znachenie }}
+                        </p>
+                    </ion-scroll>
+                </ion-nav-view>
+            </ion-tab>
+            <ion-tab title="Значения,Чтения" ui-sref="reading">
+                <ion-nav-view class="tabs-padd" name="reading">
+                    <h2>{{ gifImage[0].ieroglif_name }}</h2>
+                    <h4>{{ gifImage[0].ieroglif_description }}</h4>
+                    <ion-scroll delegate-handle="small" class="contentReading">
+                        <div>
+                            <div class="blockOny">
+                            <p>
+                                <span>Читается по <span class="red">"ону"</span>:</span>
+                                <br>
+                                <span><b>{{ gifImage[0].ieroglif_reading_on }}</b></span>
+                            </p>
+                            </div>
+                            <div class="blockOny">
+                            <p>
+                                <span>Читается по <span class="red">"куну"</span>:</span>
+                                <br>
+                                <span><b>{{ gifImage[0].ieroglif_reading_kun }}</b></span>
+                                </p>
+                            </div>
+                            <div class="blockOny">
+                            <p>
+                                <!-- <span>Является "Ключом" под номером<br> -->
+                                <span><b>{{ gifImage[0].ieroglif_key }}</b></span>
+                                </p>
+                            </div>
+                            <div class="blockOny">
+                            <p>
+                                <span><b>{{ gifImage[0].ieroglif_sequans }}</b></span>
+                            </div>
+                            </p>
+                        </div>
+                    </ion-scroll>
+                </ion-nav-view>
+            </ion-tab>
+            <ion-tab title="История" ui-sref="history">
+                <ion-nav-view class="tabs-padd1" name="history" style="height: 100% !important">
+                    <div class="imageHistory">
+                        <span>{{ gifImage[0].ieroglif }}</span>
+                    </div>
+                    <ion-scroll delegate-handle="small" class="contentHistory">
+                        <p>
+                            {{ gifImage[0].ieroglif_description_history }}
+                        </p>
+                    </ion-scroll>
+                    <div style="text-align:center; margin-top: 15px;" ng-hide="userData == null">
+                        <a ng-href="#/app/dossierend/{{gifImage[0].ieroglif_id_level}}/{{gifImage[0].ieroglif_id}}">
+                            <button class="button button-stable around-hand" ng-click="learned()">
+                                <img ng-src="img/hand.png" class="imageHand">
+                                <b>Завершить изучение</b>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="textFooterHistory">
+                        <h3 style="text-align:center">История иероглифа</h3>
+                        <img ng-src="http://japan.dev-topsu.ru/img/{{ gifImage[0].ieroglif_icon_history }}">
+                    </div>
+                </ion-nav-view>
+            </ion-tab>
+        </ion-tabs>
+    </ion-content>
+</ion-view>

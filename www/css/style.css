@@ -1,0 +1,894 @@
+a {
+    text-decoration: none;
+}
+p {
+    color: #5b3536;
+    font-size: 5vmin; 
+    line-height: 1;
+}
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4c7753dcfa33ae4185c8a9ea146085bf6696a61b
+/*START First screen*/
+.helloScreen {
+    /*background: url(1.jpg);*/
+    width: 100%;
+    height: 100%;
+}
+/*END First screen*/
+
+
+/*START acquaintance.html*/
+.aroundButtonCenter {
+    text-align: center;
+    margin-bottom: -7%;
+}
+.aroundButtonCenter i{
+    width: 100%;
+    height: 100%;
+}
+.button-round {
+    align: center;
+    display: inline-block;
+    margin: 0 auto;
+    width: 5%;
+    /*background: url(http://subtlepatterns.com/patterns/extra_clean_paper.png);*/
+    /*cursor: pointer;*/
+    border-radius: 100%;
+    opacity: 0.3;
+}
+.activeSlide {
+    opacity: 1;
+    color: #c3272b;
+    font-size: 5vmin;
+    font-weight: bolder;
+}
+.around {
+    text-align: center;
+    border-radius: 25px;
+    margin-top: 3%;
+}
+.around b {
+    color: #5b3536;
+    font-size: 5vmin;
+    margin: auto;
+}
+.around-hand {
+    border-radius: 25px;
+    font-size: 5vmin;
+}
+.aroundCenter80 {
+    /*text-align: center;*/
+    border-radius: 25px 25px 25px 25px;
+    /*color: black;*/
+    width: 80% !important;
+    margin: 0 auto;
+}
+.arrow {
+    font-size: 20px;
+    opacity: 1 !important;
+    color: white;
+}
+.acquaintanceScreen {
+    border-top: 1.5vmin solid !important;
+    border-color: #fff !important;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 90%;
+    height: 90%;
+    padding: 8%;
+    text-align: justify;
+}
+/*END acquaintance.html*/
+
+
+/*START ModalLogIn.html*/
+.buttonCenter {
+    width: 100%;
+    text-align: center
+}
+.buttonCenter b{
+    font-size: 4vmin;
+    line-height: 1;
+    margin: auto;
+}
+.modalLogInBackground {
+    background-image: url(img/content.jpg);
+    background-size: cover
+}
+.modalLogIn {
+    margin-top: 12%;
+}
+.modalLogIn h2 {
+    color: #5b3536;
+    text-align: center;
+    font-size: 8vmin; 
+    line-height: 1.5;
+}
+.modalLogIn p {
+    font-size: 4vmin; 
+    line-height: 1;
+    color: #5b3536;
+    text-align: center
+}
+.forgotRegister {
+    text-align: center;
+    border-radius: 25px 25px 25px 25px;
+    color: #5b3536;
+    width: 100%;
+}
+.toBottom {
+    margin-top: 0%;
+    display: inline-block;
+}
+.imageHand {
+    width: 35px;
+    vertical-align: middle;   
+}
+.animated {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    /*-webkit-animation-duration: 1.5s;*/
+    /*animation-duration: 1.5s;*/
+}
+.imageHand.animated.ng-enter {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.imageHand.animated.ng-leave {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+.imagesCheckName {
+    width: 35px;
+    margin-right: 2%;
+}
+.imagesCheckName.animated.ng-enter {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.imagesCheckName.animated.ng-leave {
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+.imagesCheckEmail {
+    width: 35px;
+    margin-right: 2%;
+}
+.imagesCheckEmail.animated.ng-enter {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.imagesCheckEmail.animated.ng-leave {
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+.imagesCheckPassword {
+    width: 35px;
+    margin-right: 2%;
+}
+.imagesCheckPassword.animated.ng-enter {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.imagesCheckPassword.animated.ng-leave {
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+.imagesCheckConfPassword {
+    width: 35px;
+    margin-right: 2%;
+}
+.imagesCheckConfPassword.animated.ng-enter {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.imagesCheckConfPassword.animated.ng-leave {
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+.warning {
+    border: 1px solid;
+    border-radius: 25px 25px 25px 25px;
+    border-color: white;
+    width: 80% !important;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    color: #5b3536;
+    background-image: url(img/content.jpg);
+    background-size: cover
+}
+.warning.animated {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+.warning.animated.ng-enter {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.warning.animated.ng-leave {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+.checkBox:after {
+    border-color: #5b3536 !important;
+}
+.checkBox:before {
+    border-color: #fff !important;
+    background: #fff !important;
+}
+.activeInput {
+    background-color: #fff !important;
+}
+.checkLeft {
+  /*left: 0 auto !important;*/
+  float: left;
+}
+.button-icon {
+  color: white;
+}
+/*END ModalLogIn.html*/
+
+
+/*START levelsOfTraining.html*/
+.blocklevels{
+  display: inline-block;
+  width: 30%;
+  margin: 9%;
+}
+
+.textlevel{
+  font-size: 5vmin;
+  font-weight: bold;
+  text-align: center;
+  margin: 5%;
+  color: #5b3536;
+}
+/*END levelsOfTraining.html*/
+
+
+/*START hieroglyphsLevel.html.html*/
+.tab-item{
+  font-size: 4vmin;
+  font-weight: bold;
+  color: #5b3536;
+  margin: 0px !important;
+}
+.tabs{
+  top: 0px !important;
+  position: relative !important;
+  background: #fff !important;
+  border: none !important;
+}
+
+.tabs-padd{
+  z-index: 999; 
+  padding: 9% !important;
+  position: relative !important;
+}
+.circleDay{
+  background: #fff;
+  content: '';
+  opacity: 0.5;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  border-radius: 50%;
+  width: 23%;
+  height:0;
+  padding-bottom: 23%;
+  margin-right: 2%;
+  margin-bottom: 5%;
+}
+.circleDay img{
+  color: red;
+  display: block;
+  width:45%;
+  padding-top:25%;
+  margin: 0 auto;
+}
+.circleDayTrue{
+  background: #815d56;
+  content: '';
+  opacity: 0.5;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  border-radius: 50%;
+  width: 23%;
+  height:0;
+  padding-bottom: 23%;
+  margin-right: 2%;
+  margin-bottom: 5%;
+}
+.circleDayTrue img{
+  color: red;
+  display: block;
+  width:45%;
+  padding-top:25%;
+  margin: 0 auto;
+}
+/* .circleDay p span{
+  display: block;
+  transform: translateY(-50%);
+} */
+.textFooter{
+  width: 100%;
+  bottom: 0px;
+  //background: rgba(255,255,255, 0.4);
+  color: #5b3536;
+  text-align: center;
+  padding: 3%;
+  font-size: 6vmin;
+  line-height: 1;
+  padding-top: 90%;
+}
+.textFooterHistory{
+  width: 100%;
+  height: 100px;
+  bottom: 0px;
+  color: #5b3536;
+  text-align: center;
+}
+/*END hieroglyphsLevel.html*/
+
+
+/*START dossierHieroglyph.html*/
+  .gifWriting{
+    text-align: center;
+  }
+  .GifBorder{
+    border: 5px solid #fff !important;
+  }
+  .contentWrite{
+    border-top: 5px solid #fff;
+    text-align: justify;
+    padding: 10%;
+    width: 90%;
+    margin: 0 auto;
+    background: rgba(255,255,255, 0.4);
+    height: 220px;
+    overflow-y: auto; 
+    margin-top: 5%;
+    color: #5b3536;
+  }
+  .contentHistory{
+    border-top: 5px solid #fff;
+    text-align: justify;
+    padding: 8%;
+    width: 82%;
+    margin: 0 auto;
+    background: rgba(255,255,255, 0.4);
+    height: 250px;
+    margin-top: 5%;
+    color: #5b3536;
+    position: relative;
+  }
+  .contentReading{
+    border-top: 5px solid #fff;
+    text-align: justify;
+    padding: 7%;
+    width: 100%;
+    margin: 0 auto;
+    background: rgba(255,255,255, 0.4);
+    height: 300px;
+    margin-top: 10%;
+    color: #5b3536;
+    text-align: center;
+  }
+  h2{
+    text-align: center;
+    color: #5b3536;
+  }
+  h4{
+    text-align: center;
+    color: #5b3536;
+  }
+  h3{
+    text-align: center;
+    color: #5b3536; 
+  }
+  span{
+    margin: 0 auto;
+  }
+  .red{
+    color: red;
+  }
+  .blockOny{
+    margin-top: 5%;
+  }
+  .imageHistory{
+    background-color: #dfdfdf;
+    color: red;
+    font-size: 20px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    font-weight: 200;
+    height: 80px;
+    line-height: 70px;
+    width: 80px;
+    top: -40px;
+    right: 20px;
+    margin: 0 auto;
+    text-align: center;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    margin-top: 20px;
+=======
+>>>>>>> 21d92adbc17bcfc7f56b630771a4d7b983f2425c
+>>>>>>> 4c7753dcfa33ae4185c8a9ea146085bf6696a61b
+  }
+  .footer img{
+    background-image: url(img/footer.png) !important;
+    position: absolute !important;
+    bottom: 0px !important;
+    width: 100%;
+  }
+  .tabs-padd1{
+    z-index: 999; 
+    position: relative !important;
+    position: fixed;
+  }
+  .textFooterHistory{
+    margin-top: 20px;
+    background: rgba(255,255,255, 0.4);
+    height: auto;
+  }
+/*END dossierHieroglyph.html*/
+
+
+/* START Menu.html  */
+.item-content,
+.item {
+    background: none !important;
+    color: #5b3536;
+    border-color: #5b3536;
+}
+/* END Menu.html  */
+
+
+/* START bigHieroglyphHolms.html */
+.button.button-positive{
+  border-color: #5b3536;
+  background-color: #5b3536;
+}
+
+.button.button-positive.activated{
+  border-color: #7b5d5e;
+  background-color: #7b5d5e;
+}
+
+.row.holms{
+    margin-top: -50px;
+}
+
+.row.shapka {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2.0rem;
+    padding-top: 4%;
+    margin-bottom: -5%;
+    color: #5b3536;
+    line-height: 1;
+}
+
+.bigHieroglyphHolms {
+    width: 60%;
+    padding-bottom: 17%;
+    margin: 10% 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin-left: 20%;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-border-radius: 50%;
+}
+
+.hieroglyphs img {
+    color: #910404;
+    margin-top: 28%;
+    margin-left: 30%;
+    width: 40%;
+}
+
+.ion-chevron-down.holms {
+    font-size: 2.75rem;
+    color: #fff;
+    margin-left: 6%;
+}
+
+.ion-chevron-right.holms {
+    font-size: 2.75rem;
+    color: #fff;
+    margin-left: 80%;
+}
+
+.button.button-stable.around {
+    margin-top: 5%;
+    color: #5b3536;
+}
+
+.wrapperLogic {
+    width: 100%;
+    margin-top: 5%;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.nameLogicalChain {
+    text-align: center;
+    padding-top: 3%;
+    font-weight: bolder;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.LogicalChain {
+    width: 100%;
+}
+
+#handIco {
+    width: 35px;
+    vertical-align: middle;
+}
+/* END bigHieroglyphHolms.html */
+
+
+/* START howToRememberHolms.html */
+.rememberIeroglif {
+    color: #910404;
+    padding-top: 6%;
+    padding-left: 6%;
+    position: absolute;
+    font-weight: bolder;
+    line-height: 1;
+}
+
+.rememberCircle {
+    border: 5px solid #fff;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    border-radius: 100%;
+    background: #cecece;
+    max-width: 350px;
+    margin: 2%;
+    margin-left: 37%;
+    -webkit-border-radius: 100%;
+}
+
+.rememberCircle p {
+    display: block;
+    height: 0;
+    margin: 0;
+    padding: 50% 20%;
+}
+
+.rememberCircle p span img {
+    display: block;
+    transform: translateY(-50%);
+    margin-left: 9%;
+    margin-top: -40%;
+    width: 80%;
+}
+
+.rememberName {
+    padding-top: 4%;
+    text-align: center;
+    color: #5b3536;
+    font-weight: bolder;
+    font-size: 1.675rem;
+    line-height: 1;
+}
+
+.rememberDesc {
+    font-size: 1rem;
+    line-height: 1;
+    padding-top: 3%;
+}
+
+.rememberContainerScroll {
+    border-top: 5px solid #fff;
+    text-align: justify;
+    padding: 5%;
+    width: 82%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.4);
+    min-height: 50px;
+    max-height: 250px;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    color: #5b3536;
+    position: relative;
+}
+/* END howToRememberHolms.html */
+
+
+/* START test.html */
+.testContainerScroll {
+    border-top: .4rem solid #fff;
+    /*text-align: justify;*/
+    /*padding: 7%;*/
+    width: 90%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.4);
+    height: 20rem;
+    margin-top: 3%;
+    color: #5b3536;
+    /*text-align: center;*/
+}
+/*.smallRound {
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  width: 25%;
+  height:0;
+  padding-bottom: 21%;
+    background-color: #dfdfdf;
+    border: 1.5vmin solid #fff;
+    margin-top: 3%;
+}
+.smallRound img {
+  color: red;
+  display: block;
+  width:45%;
+  padding-top:25%;
+  margin: 0 auto;
+}*/
+.smallRound {
+   display: inline-block;
+    width: 25%;
+    text-align: center;
+    border-radius: 100%;
+    background-color: #dfdfdf;
+  padding-bottom: 6%;
+    /*max-width: 350px;*/
+    margin-top: 2%;
+    margin-left: 37%;
+    border: 0.4rem solid #fff;
+}
+.smallRound img {
+  color: red;
+  display: block;
+  width:45%;
+  padding-top:23%;
+  margin: 0 auto;
+}
+.smallRound p {
+    display: block;
+    height: 0;
+    margin: 0;
+    padding: 50% 20%;
+}
+.smallRound p span {
+    display: block;
+    transform: translateY(-50%);
+    width: 80%;
+    font-size: 1.4rem;
+    color: #920D02;
+    font-weight: bold;
+    //margin-top: -25%;
+}
+.testContent {
+  margin-top: 3%;
+  text-align: left;
+  padding: 0 !important;
+  border-style: none;
+}
+.testItem {
+  font-size: 5vmin; 
+    line-height: 1.5;
+  border-style: none;
+  padding: 1% 20% 2% 0%  !important;
+  white-space: normal !important;
+  padding-left: 5% !important;
+}
+/*.item-checkbox .checkbox {
+  left: auto; !important;
+}*/
+span {
+  white-space: normal !important;
+  /*padding-left: 5%;*/
+}
+.checkbox-icon:before {
+    border-color: #fff !important;
+    background: #fff !important;
+}
+.checkbox-icon:after {
+    border-color: #5b3536 !important;
+}
+.item-checkbox .checkbox {
+  /*right: 0% !important;*/
+  left: auto !important;
+}
+/*.item-content {
+  padding-left: 5% !important;
+}*/
+.testTitle {
+  /*font-size: 16px;*/
+  font-size: 5vmin; 
+    line-height: 1;
+  padding-left: 5% !important;
+}
+.numberOfCountHieroglif {
+  /*position: absolute;*/
+  margin-left: 10%;
+  /*margin-top: 20%;*/
+}
+/* END test.html */
+
+
+/* START dossierEnd.html */
+.dossierEndDesc {
+    color: #5b3536;
+    font-weight: bolder;
+    width: 90%;
+    text-align: center;
+    padding-top: 20%;
+    padding-left: 10%;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.uKnowUp {
+    color: #5b3536;
+    text-align: center;
+    margin-top: 10%;
+    line-height: 1;
+}
+
+.uKnowDown {
+    color: #5b3536;
+    text-align: center;
+    margin-bottom: 10%;
+    line-height: 1;
+}
+
+.dossierCircle {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    border-radius: 100%;
+    background: rgba(244, 255, 222, 0.4);
+    max-width: 350px;
+    margin: 2%;
+    margin-left: 30%;
+    -webkit-border-radius: 100%;
+}
+
+.dossierCircle p {
+    display: block;
+    height: 0;
+    margin: 0;
+    padding: 50% 20%;
+}
+
+.dossierCircle p span {
+    display: block;
+    transform: translateY(-50%);
+    width: 80%;
+    font-size: 1.4rem;
+    color: #920D02;
+    font-weight: bold;
+    margin-top: -15%;
+}
+
+.dossierCircle p span i{
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    color: #fff;
+}
+/* END dossierEnd.html */
+
+
+/* START startTest.html */
+.startTestDesc {
+    color: #5b3536;
+    font-weight: bolder;
+    width: 90%;
+    text-align: center;
+    padding-top: 20%;
+    padding-left: 10%;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.testImg {
+    width: 35%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 32%;
+}
+/* END startTest.html */
+
+
+/* Start Congratulations.html */
+  .congratulationsDesc{
+    color: #5b3536;
+    font-weight: bolder;
+    width: 90%;
+    text-align: center;
+    margin-top: 13%;
+    margin-left: 6%;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .CongratulationsImg {
+    width: 35%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 35%;
+}
+/* END Congratulations.html*/
+
+
+/* START testResults.html */
+.circleDayTestFalse{
+  background: rgba(91,53,54, 0.5);
+  /*background: rgba(255,255,255, 0.5);*/
+  content: '';
+  /*opacity: 0.5;*/
+  display: inline-block;
+  float: left;
+  text-align: center;
+  border-radius: 50%;
+  width: 22%;
+  height:0;
+  padding-bottom: 22%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+  border: 0.1rem solid red;
+}
+.circleDayTestFalse img{
+  color: red;
+  display: block;
+  width:45%;
+  padding-top:25%;
+  margin: 0 auto;
+}
+.circleDayTestTrue{
+  background: #fff;
+  content: '';
+  /*opacity: 0.5;*/
+  display: inline-block;
+  float: left;
+  text-align: center;
+  border-radius: 50%;
+  width: 22%;
+  height:0;
+  padding-bottom: 22%;
+  margin-right: 3%;
+  margin-bottom: 5%;
+  border: 0.1rem solid green;
+}
+.circleDayTestTrue img{
+  display: block;
+  width:45%;
+  padding-top:25%;
+  margin: 0 auto;
+}
+/* END testResults.html */

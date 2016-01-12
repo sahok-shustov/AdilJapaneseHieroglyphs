@@ -1,0 +1,38 @@
+<ion-view cache-view="true" view-title="Знакомство с программой" style="text-align: center">
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <div class="acquaintanceScreen" style="font-family: Arial; font-size: 1rem">
+            <ion-slide-box on-slide-changed="slideChanged($index)">
+                <ion-slide>
+                <p><b>Иероглифы</b> - аналог знаков дорожного движения. Глядя на знак "Въезд запрещён", люди разных национальностей назовут и прокомментируют его по-своему, но смысл будет для всех одинаков. Поэтому для вождения в чужой стране Вам не нужно учить язык её жителей, достаточно иметь вод. удостоверение."</p>
+               <br>
+                <p><b>Китайский</b> язык - это исключительно ЗРИТЕЛЬНОЕ ВОСПРИЯТИЕ, <b>японский</b> - </p>
+                </ion-slide>
+                <ion-slide>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur fuga sint placeat qui laborum, illo sit laboriosam quia ipsa suscipit perspiciatis, vero eligendi necessitatibus accusamus quae, nobis repellendus doloribus earum.</p>
+                </ion-slide>
+                <ion-slide>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo saepe sint provident assumenda explicabo, accusantium laudantium commodi quibusdam dolorem eum impedit reiciendis tenetur blanditiis labore et, quidem suscipit porro incidunt?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa iusto neque quam corporis omnis, consectetur exercitationem in a quo numquam incidunt temporibus, nulla magnam nam perferendis vitae fuga ut esse!</p>
+                </ion-slide>
+                <ion-slide>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae minus, officia in cupiditate sunt adipisci eaque aspernatur dolore natus? Praesentium dolores, dolorem. Beatae alias quasi voluptatum, modi sint enim, at!</p>
+                </ion-slide>
+            </ion-slide-box>
+            <div class="aroundButtonCenter">
+                <button class="button button-clear button-small button-round" style="opacity: 1" ng-click="previousSlide()">
+                    <i class="ion-chevron-left arrow"></i>
+                </button>
+
+                <button class="button button-small button-round" ng-init="slide(0)" ng-repeat="button in buttons" ng-class="{'activeSlide': $index === current}" ng-click="slide($index)">{{ button.name }}
+                </button>
+                
+                <button class="button button-clear button-small button-round" style="opacity: 1" ng-click="nextSlide()">
+                    <i class="ion-chevron-right arrow"></i>
+                </button>
+            </div>
+        </div>
+        <div class="around">
+        <a class="button around" ng-href="#/app/levelsoftraining">&nbsp;&nbsp;&nbsp;&nbsp; <b>Начнём!</b> &nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+    </ion-content>
+</ion-view>

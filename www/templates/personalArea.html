@@ -1,0 +1,26 @@
+<ion-view view-title="Личный кабинет">
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <!-- <div class="blocklevels" ng-repeat="circle in circles">
+            <a ng-if="circle.level_id == circle.level_user_id_level" ng-href="#/app/hieroglyphslevel">
+                <img src="img/1level.png" width="105%" ng-click="hierogLevel1">
+                <p class="textlevel">{{ circle.level_name }}</p>
+            </a>
+            <a ng-if="circle.level_id !== circle.level_user_id_level" ng-href="">
+                <img src="img/2level.png" width="105%" ng-click="hierogLevel1; showAlert()">
+                <p class="textlevel">{{ circle.level_name }}</p>
+                </a>
+        </div> -->
+        <!--  <p>Количество изученных иероглифов = {{learnedieroglif}}</p>
+       <p>Количество пройденных тестов = {{endTest}}</p> -->
+        <div class="card">
+            <div class="item item-text-wrap">
+                <p style="color: #5b3536; font-size: 1rem">Количество изученных иероглифов</p><span class="badge badge-assertive">{{learnedieroglif}}</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-text-wrap">
+                <p style="color: #5b3536; font-size: 1rem">Количество пройденных тестов</p><span class="badge badge-assertive">{{endTest}}</span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

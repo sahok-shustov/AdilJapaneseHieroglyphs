@@ -1,0 +1,60 @@
+<ion-view cache-view="false" view-title="Иероглифы 1 уровень">
+<!-- tabs -->
+
+  <!-- content -->
+<ion-content style="background-image: url(img/content.jpg); background-size: cover;">
+  <ion-tabs class="tabs-striped tabs-top tabs-background-dark">
+    <ion-tab title="Экран 1" ui-sref="help">
+            <ion-nav-view class="tabs-padd" name="tap1">
+            <a ng-href="#/app/bighieroglyphholms/{{id_level}}/{{ circleDay.ieroglif_id }}" ng-repeat="circleDay in circleDayOnes">
+            <div class="circleDayTrue" ng-if="circleDay.learned == 'true'">
+            <img ng-src="http://japan.dev-topsu.ru/img/{{ circleDay.ieroglif_icon_china_var }}">
+            </div>
+            <div class="circleDay" ng-if="circleDay.learned !== 'true'">
+            <img ng-src="http://japan.dev-topsu.ru/img/{{ circleDay.ieroglif_icon_china_var }}">
+            </div>
+            </a>
+            </ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Экран 2" ui-sref="home">
+            <ion-nav-view class="tabs-padd" name="tap2">
+            <a ng-href="#/app/bighieroglyphholms/{{id_level}}/{{ circleDay.ieroglif_id }}" ng-repeat="circleDay in circleDayTwo">
+            <div class="circleDayTrue" ng-if="circleDay.learned == 'true'">
+            <img ng-src="http://japan.dev-topsu.ru/img/{{ circleDay.ieroglif_icon_china_var }}">
+            </div>
+            <div class="circleDay" ng-if="circleDay.learned !== 'true'">
+            <img ng-src="http://japan.dev-topsu.ru/img/{{ circleDay.ieroglif_icon_china_var }}">
+            </div>
+            </a>
+            </ion-nav-view> 
+    </ion-tab>
+    <ion-tab title="Экран 3" ui-sref="contact">
+            <ion-nav-view class="tabs-padd" name="tap3">
+            <a ng-href="#/app/bighieroglyphholms/{{id_level}}/{{ circleDay.ieroglif_id }}"  ng-repeat="circleDay in circleDayThree">
+            <div class="circleDayTrue" ng-if="circleDay.learned == 'true'">
+            <img ng-src="http://japan.dev-topsu.ru/img/{{ circleDay.ieroglif_icon_china_var }}">
+            </div>
+            <div class="circleDay" ng-if="circleDay.learned !== 'true'">
+            <img ng-src="http://japan.dev-topsu.ru/img/{{ circleDay.ieroglif_icon_china_var }}">
+            </div>
+            </a>
+            </ion-nav-view> 
+    </ion-tab>
+    <ion-tab title="Экран 4" ui-sref="contact">
+            <ion-nav-view class="tabs-padd" name="tap4">
+            <a ng-href="#/app/bighieroglyphholms/{{id_level}}/{{ circleDay.ieroglif_id }}" ng-repeat="circleDay in circleDayFour">
+            <div class="circleDayTrue" ng-if="circleDay.learned == 'true'">
+            <img ng-src="http://japan.dev-topsu.ru/img/{{ circleDay.ieroglif_icon_china_var }}">
+            </div>
+            <div class="circleDay" ng-if="circleDay.learned !== 'true'">
+            <img ng-src="http://japan.dev-topsu.ru/img/{{ circleDay.ieroglif_icon_china_var }}">
+            </div>
+            </a>
+            </ion-nav-view> 
+    </ion-tab>
+</ion-tabs>
+<div class="textFooter">
+    Если Вы забыли значение или чтение уже изученого иероглифа, нажмите на его затемнённую кнопку и повторите забытые сведения о нем.
+</div>
+</ion-content>
+</ion-view>

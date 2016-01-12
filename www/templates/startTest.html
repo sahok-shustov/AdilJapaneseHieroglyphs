@@ -1,0 +1,14 @@
+<ion-view cache-view="true" view-title="Пройти тест">
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <p class="startTestDesc"> Вы завершили изучение всех 80 иероглифов 1 уровня. Теперь вы можете пройти по ним тест. </p>
+        <img src="img/test.png" class="testImg">
+        <div class="buttonCenter">
+            <a ng-href="#/app/test/{{item.ieroglif_id_level}}}">
+                <button class="button button-stable around">
+                    <img ng-src="img/hand.png" id="handIco">
+                    <b>Пройти тест</b>
+                </button>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

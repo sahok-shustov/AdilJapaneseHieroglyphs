@@ -1,0 +1,25 @@
+<ion-view view-title="Досье иероглифа (Завершение)">
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <div class="wrapperDossierEnd">
+            <p class="uKnowUp">Вы изучили</p>
+            <div class="dossierCircle">
+                <p>
+                    <span>
+                        <i class="ion-android-star"></i>
+                            {{ learnedieroglif }}
+                        <i class="ion-android-star"></i>
+                    </span>
+                </p>
+            </div>
+            <p class="uKnowDown">иероглифов</p>
+        </div>
+        <div class="buttonCenter">
+            <a href="#/app/hieroglyphslevel/{{id_level}}">
+                <button class="button button-stable around">
+                    <img src="img/hand.png" id="handIco">
+                    <b>Продолжить изучение</b>
+                </button>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

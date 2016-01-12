@@ -1,0 +1,30 @@
+<ion-modal-view>
+    <ion-header-bar style="background-image: url(img/bar.png) !important; background-size: cover">
+        <div class="title" style="color: #fff">Запоминаем с Холмсом</div>
+    </ion-header-bar>
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <div class="wrapper">
+            <div class="rememberCircle">
+                <p>
+                    <span>
+                        <img ng-src="http://japan.dev-topsu.ru/img/{{ieroglif[0].ieroglif_icon_china_var}}" alt="Crap">
+                    </span>
+                </p>
+            </div>
+        </div>
+        <ion-scroll delegate-handle="small" class="rememberContainerScroll">
+            <div class="rememberName"> {{ ieroglif[0].ieroglif_name }}</div>
+            <div class="rememberDesc"><p>{{ ieroglif[0].ieroglif_save }}</p></div>
+        </ion-scroll>
+        <div class="buttonCenter">
+            <button class="button button-stable around-hand" ng-click="closehowToRememberHolms()">
+                <img src="img/hand.png" class="imageHand">
+                <b>Вернуться</b>
+            </button>
+        </div>
+        <div class="wrapperLogic" ng-hide="ieroglif[0].ieroglif_icon_logic == ''">
+            <p class="nameLogicalChain">Логическая цепочка</p>
+            <img id="LogicalChain" ng-src="http://japan.dev-topsu.ru/img/{{ieroglif[0].ieroglif_icon_logic}}" alt="Недоступно">
+        </div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,59 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-clear" style="background-image: url(img/bar.png) !important; background-size: cover; color: white;">
+            <ion-nav-buttons>
+                <button class="button button-icon button-clear ion-navicon-round" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <a class="button button-icon icon ion-person" ng-href="#/app/personalarea" ng-show="menuEnterString"></a>
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-clear" style="background-image: url(img/bar.png) !important; background-size: cover; color: white">
+            <h1 class="title" style="text-align: center; color: white">Меню</h1>
+        </ion-header-bar>
+        <ion-content style="position: absolute; background-image: url(img/content.jpg); background-size: cover">
+            <ion-list>
+                <div class="list">
+                    <ion-item class="item item-icon-left item-content" menu-close ng-click="login()" ng-show="!menuEnterString" style="font-size: 4vmin; line-height: 1;"><i class="icon ion-log-in"></i> Авторизация
+                    </ion-item>
+                    <ion-item class="item item-icon-left" menu-close ng-click="showConfirmExit()" ng-show="menuEnterString" ng-href="" style="font-size: 4vmin; line-height: 1;"> <i class="icon ion-log-out"></i> Выход
+                    </ion-item>
+                    <!-- <ion-item class="item item-icon-left" menu-close href="#/app/helloscreen">
+                    <i class="icon ion-home"></i> Главная
+                    </ion-item> -->
+                    <ion-item class="item item-icon-left" menu-close ng-href="#/app/acquaintance" style="font-size: 4vmin; line-height: 1;">
+                        <i class="icon ion-information-circled"></i> Инструкция
+                    </ion-item>
+                    <ion-item class="item item-icon-left" menu-close ng-href="#/app/levelsoftraining" style="font-size: 4vmin; line-height: 1;">
+                        <i class="icon ion-flag"></i> Уровни обучения
+                    </ion-item>
+                    <ion-item class="item item-icon-left" menu-close ng-href="#/app/personalarea" ng-show="menuEnterString" style="font-size: 4vmin; line-height: 1;">
+                        <i class="icon ion-key"></i> Личный кабинет
+                    </ion-item>
+                    <ion-item class="item item-icon-left" menu-close ng-href="#/app/test/:id_level" style="font-size: 4vmin; line-height: 1;">
+                        <i class="icon ion-clipboard"></i> Тест
+                    </ion-item>
+                    <ion-item menu-close href="#/app/congratulations">Поздравляем!!!
+                    </ion-item>
+                    <!-- <ion-item class="item item-icon-left" menu-close href="#/app/info">
+                    <i class="icon ion-information-circled"></i> О сервисе
+                </ion-item> -->
+                    <!-- <ion-item menu-close href="#/app/search">
+                    Search
+                </ion-item>
+                <ion-item menu-close href="#/app/browse">
+                    Browse
+                </ion-item>
+                <ion-item menu-close href="#/app/playlists">
+                    Playlists
+                </ion-item> -->
+                </div>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,34 @@
+<ion-view cache-view="true" view-title="Запоминаем с Холмсом">
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <div class="row shapka">
+            <div class="col"><b>{{ ieroglif[0].ieroglif_name }}</b></div>
+        </div>
+        <div class="bigHieroglyphHolms">
+            <div class="hieroglyphs">
+                <img ng-src="http://japan.dev-topsu.ru/img/{{ieroglif[0].ieroglif_icon_china_var}}">
+            </div>
+        </div>
+        <div class="row holms">
+            <div class="col">
+                <a ng-href="#/app/bighieroglyphholms/{{ieroglif[0].ieroglif_id_level}}/{{nextIeroglif}}" ng-hide="level_count_ieroglif == ieroglif[0].ieroglif_id">
+                    <i class="ion-chevron-down holms"></i>
+                </a>
+            </div>
+            <div class="col">
+                <a ng-href="#/app/dossierhieroglyph/{{ieroglif[0].ieroglif_id_level}}/{{ieroglif[0].ieroglif_id}}">
+                    <i class="ion-chevron-right holms"></i>
+                </a>
+            </div>
+        </div>
+        <div class="buttonCenter">
+            <button class="button button-stable around-hand" ng-click="howToRememberHolms()">
+                <img src="img/hand.png" class="imageHand">
+                <b>Как запомнить?</b>
+            </button>
+        </div>
+        <div class="wrapperLogic" ng-hide="ieroglif[0].ieroglif_icon_logic == ''">
+            <p class="nameLogicalChain"><b>Логическая цепочка</b></p>
+            <img class="LogicalChain" ng-src="http://japan.dev-topsu.ru/img/{{ieroglif[0].ieroglif_icon_logic}}">
+        </div>
+    </ion-content>
+</ion-view>

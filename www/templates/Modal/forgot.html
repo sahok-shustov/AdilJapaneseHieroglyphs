@@ -1,0 +1,66 @@
+<!-- <ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+        <button class="button button-icon icon ion-settings"></button>
+        <div class="h1 title">Сброс пароля</div>
+        <button class="button button-icon icon ion-close-circled" ng-click="closeForgot()"></button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="card">
+            <div class="item item-text-wrap">
+                Введите емеил при регистрации.
+                <br> Мы вышлим на него новый временный пароль.
+            </div>
+        </div>
+        <form name="forgotForm" novalidate ng-submit="doForgot()">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" ng-model="reset.email" name="reset" placeholder="Введите Email" ng-pattern="/[a-z0-9!.,#$%&'*+-/=?^_`{|}~]+@[a-z]+\.[a-z.]{2,}$/" required>
+                    <span style="color:red" ng-show="forgotForm.reset.$dirty && forgotForm.reset.$invalid"></span>
+                    <span style="color:red" ng-show="forgotForm.reset.$error.pattern">Вводите корректный почтовый ящик!</span>
+                </label>
+            </div>
+            <div class="padding" style="width: 100%; text-align: center">
+                <button class="button button-assertive icon-left" type="submit" ng-disabled="forgotForm.reset.$invalid || forgotForm.reset.$pristine || forgotForm.reset.$error.pattern">Выслать пароль</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>
+ -->
+<ion-modal-view>
+    <ion-header-bar class="bar-clear" style="background-image: url(img/bar.png) !important; background-size: cover">
+        <button class="button-icon icon ion-help"></button>
+        <div class="h1 title">Сброс пароля</div>
+        <button class="button button-icon icon ion-close-circled" ng-click="closeForgot()"></button>
+    </ion-header-bar>
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <div class="modalLogIn">
+            <!-- <h2><b>Создайте аккаунт</b></h2> -->
+            <p>Введите емеил при регистрации.
+                <br> Мы вышлим на него новый временный пароль.</p>
+        </div>
+        <form name="forgotForm" novalidate ng-submit="doForgot()">
+            <div class="list">
+                <label class="item item-input aroundCenter80" style="margin-top: 5%; background-color: #fff !important">
+                    <input type="email" ng-model="reset.email" name="reset" placeholder="Email" ng-pattern="/[a-z0-9!.,#$%&'*+-/=?^_`{|}~]+@[a-z]+\.[a-z.]{2,}$/" required>
+                    <img src="img/exclamationPoint.png" ng-if="forgotForm.reset.$dirty && forgotForm.reset.$invalid && forgotForm.reset.$error.pattern" class="imagesCheckEmail animated">
+                    <img src="img/check.png" ng-if="forgotForm.reset.$dirty && !forgotForm.reset.$invalid && !forgotForm.reset.$error.pattern" class="imagesCheckEmail animated">
+                </label>
+            </div>
+            <div class="buttonCenter">
+                <button class="button around-hand" style="margin-top: 0%; color: #5b3536; display: inline-flex" type="submit" ng-disabled="forgotForm.reset.$invalid || forgotForm.reset.$pristine || forgotForm.reset.$error.pattern"><img src="img/hand.png" class="imageHand">&nbsp;<b>Выслать пароль</b>&nbsp;&nbsp;</button>
+            </div>
+            <!-- <div class="padding"> -->
+            <!-- <button class="button button-block aroundCenter80" style="width: 80%; color: #5b3536" type="submit" ng-disabled="forgotForm.reset.$invalid || forgotForm.reset.$pristine || forgotForm.reset.$error.pattern"><img src="img/hand.png" class="imagesHand"><b>Выслать пароль</b></button> -->
+            <!-- </div> -->
+        </form>
+        <!-- <div class="forgotRegister">
+            <button class="button icon-left ion-help around" style="color: #5b3536" ng-click="openForgot()">
+                Забыли пароль
+            </button>
+            <button class="button icon-left ion-person-add around" style="color: #5b3536" ng-click="openRegister()">
+                Регистрация
+            </button>
+        </div> -->
+    </ion-content>
+</ion-modal-view>

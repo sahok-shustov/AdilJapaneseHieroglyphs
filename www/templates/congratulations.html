@@ -1,0 +1,22 @@
+<ion-view cache-view="true" view-title="Запоминаем с Холмсом">
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+       <p class="congratulationsDesc">Вы успешно прошли тестирование на уровене {{id_level}} <br>
+       Поздравляем Вас!</p>
+       <img src="img/congratulations.png" class="CongratulationsImg">
+        <div class="buttonCenter">
+            <a ng-href="#/app/levelsoftraining">
+                <button class="button button-stable around">
+                    <b>Перейдите к следующему уровню</b>
+                </button>
+            </a>
+        </div>
+        <div class="buttonCenter">
+            <a ng-href="#">
+                <button class="button button-stable around">
+                    <img ng-src="img/hand.png" id="handIco">
+                    <b>Получить диплом</b>
+                </button>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,89 @@
+<!-- <ion-modal-view>
+    <ion-header-bar class="bar-positive">
+        <button class="button button-icon icon ion-person-add"></button>
+        <div class="h1 title">Регистрация</div>
+        <button class="button button-icon icon ion-close-circled" ng-click="closeRegister()"></button>
+    </ion-header-bar>
+    <ion-content>
+        <form name="registerForm" novalidate ng-submit="doRegister()">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Имя*</span>
+                    <input type="text" placeholder="Введите имя" name="userName" ng-model="register.name" ng-pattern="/[A-Za-zА-Яа-яЁё]+$/" required>
+                    <span style="color:red" ng-show="registerForm.userName.$dirty && registerForm.userName.$invalid">
+                    <span ng-show="registerForm.userName.$error.pattern">Имя не должно содержать цифры!</span>
+                    </span>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email*</span>
+                    <input type="email" placeholder="example@mail.com" name="email" ng-model="register.email" ng-pattern="/[a-z0-9!.,#$%&'*+-/=?^_`{|}~]+@[a-z]+\.[a-z.]{2,}$/" required>
+                    <span style="color:red" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                    <span ng-show="registerForm.email.$touched && registerForm.email.$error.pattern">Введите корректный почтовый ящик!</span>
+                    </span>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Пароль*</span >
+                <input type="{{inputRegisterP}}" placeholder="Введите пароль" name="password" ng-model="register.password" style="width: 90%;" ng-minlength="6" ng-change="registerComparingPasswords()" required>
+                <span class="error" ng-show="registerForm.password.$error.minlength">
+        Пароль не менее 6 символов.</span>
+                </label>
+                <a ng-click="hideShowPasswordRegister(); eyeOpenRP=true" ng-show="!eyeOpenRP" class="button button-clear icon ion-eye-disabled" style="position: absolute; top: 57%; left: 85%; z-index: 2"></a>
+                <a ng-click="hideShowPasswordRegister(); eyeOpenRP=false" ng-show="eyeOpenRP" class="button button-clear icon ion-eye button-positive" style="position: absolute; top: 57%; left: 85%; z-index: 2"></a>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Подтвердить пароль*</span>
+                    <input type="{{inputRegisterC}}" placeholder="Подтвердите пароль" name="confirmPassword" ng-model="register.confirmPassword" style="width: 90%;" ng-change="registerComparingPasswords()" required>
+                    <span class="error" ng-show="notEqual" style="color:red">
+        Пароли не совпадают!</span>
+                </label>
+                <a ng-click="hideShowPasswordRegisterConfirm(); eyeOpenRC=true" ng-show="!eyeOpenRC" class="button button-clear icon ion-eye-disabled" style="position: absolute; top: 80%; left: 85%; z-index: 2"></a>
+                <a ng-click="hideShowPasswordRegisterConfirm(); eyeOpenRC=false" ng-show="eyeOpenRC" class="button button-clear icon ion-eye button-positive" style="position: absolute; top: 80%; left: 85%; z-index: 2"></a>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-positive" type="submit" ng-disabled="registerForm.email.$error.required || registerForm.email.$invalid || registerForm.userName.$pristine || registerForm.email.$error.pattern || registerForm.email.$pristine || registerForm.password.$pristine || registerForm.password.$error.minlength || registerForm.confirmPassword.$pristine || notEqual">Зарегистрироваться</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>
+ -->
+<ion-modal-view>
+    <ion-header-bar class="bar-clear" style="background-image: url(img/bar.png) !important; background-size: cover">
+        <button class="button-icon icon ion-person-add"></button>
+        <div class="h1 title">Регистрация</div>
+        <button class="button button-icon icon ion-close-circled" ng-click="closeRegister()"></button>
+    </ion-header-bar>
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <div class="modalLogIn">
+            <h2><b>Заполните все поля</b></h2>
+            <!-- <p>Зарегистрируйтесь, чтобы использовать все возможности приложения</p> -->
+        </div>
+        <form name="registerForm" novalidate ng-submit="doRegister()">
+            <div class="list">
+                <label class="item item-input aroundCenter80" style="margin-top: 5%; background-color: #fff !important;">
+                    <input type="text" placeholder="Имя" name="userName" ng-model="register.name" ng-pattern="/[A-Za-zА-Яа-яЁё]+$/" required>
+                    <img src="img/exclamationPoint.png" ng-if="registerForm.userName.$dirty && registerForm.userName.$invalid && registerForm.userName.$error.pattern" class="imagesCheckName animated">
+                    <img src="img/check.png" ng-if="registerForm.userName.$dirty && !registerForm.userName.$invalid && !registerForm.userName.$error.pattern" class="imagesCheckName animated">
+                </label>
+                <label class="item item-input aroundCenter80" style="margin-top: 3%; background-color: #fff !important;">
+                    <input type="email" placeholder="Почтовый ящик" name="email" ng-model="register.email" ng-pattern="/[a-z0-9!.,#$%&'*+-/=?^_`{|}~]+@[a-z]+\.[a-z.]{2,}$/" required>
+                    <img src="img/exclamationPoint.png" ng-if="registerForm.email.$dirty && registerForm.email.$invalid && registerForm.email.$error.pattern" class="imagesCheckEmail animated">
+                    <img src="img/check.png" ng-if="registerForm.email.$dirty && !registerForm.email.$invalid && !registerForm.email.$error.pattern" class="imagesCheckEmail animated">
+                </label>
+                <label class="item item-input aroundCenter80" style="margin-top: 3%; background-color: #fff !important;">
+                    <input type="password" placeholder="Пароль" name="password" ng-model="register.password" ng-minlength="6" ng-change="registerComparingPasswords()" required>
+                    <img src="img/exclamationPoint.png" ng-if="registerForm.password.$dirty && registerForm.password.$error.minlength" class="imagesCheckPassword animated">
+                    <img src="img/check.png" ng-if="registerForm.password.$dirty && !registerForm.password.$error.minlength && !registerForm.password.$error.required" class="imagesCheckPassword animated">
+                </label>
+                <div ng-if="registerForm.password.$dirty && registerForm.password.$error.minlength" class="warning animated">Пароль не менее 6 символов</div>
+                <label class="item item-input aroundCenter80" style="margin-top: 3%; background-color: #fff !important;">
+                    <input type="password" placeholder="Подтвердите пароль" name="confirmPassword" ng-model="register.confirmPassword" ng-change="registerComparingPasswords()" required>
+                    <img src="img/exclamationPoint.png" ng-if="registerForm.confirmPassword.$dirty && notEqual" class="imagesCheckPassword animated">
+                    <img src="img/check.png" ng-if="registerForm.confirmPassword.$dirty && equal" class="imagesCheckPassword animated">
+                </label>
+                <div ng-if="registerForm.confirmPassword.$dirty && notEqual" class="warning animated">Пароли не совпадают</div>
+            </div>
+            <div class="buttonCenter">
+                <button class="button around-hand" style="margin-top: 10%; color: #5b3536; display: inline-flex" type="submit" ng-disabled="registerForm.email.$error.required || registerForm.email.$invalid || registerForm.userName.$pristine || registerForm.email.$error.pattern || registerForm.email.$pristine || registerForm.password.$pristine || registerForm.password.$error.minlength || registerForm.confirmPassword.$pristine || notEqual"><img src="img/hand.png" class="imageHand">&nbsp;<b>Зарегистрироваться</b>&nbsp;&nbsp;</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

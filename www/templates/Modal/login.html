@@ -1,0 +1,51 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-clear" style="background-image: url(img/bar.png) !important; background-size: cover">
+        <button class="button-icon icon ion-person"></button>
+        <div class="h1 title">Авторизация</div>
+        <button class="button button-icon icon ion-close-circled" ng-click="closeLogin()"></button>
+    </ion-header-bar>
+    <ion-content style="background-image: url(img/content.jpg); background-size: cover">
+        <div class="modalLogIn">
+            <h2><b>Создайте аккаунт</b></h2>
+            <p>Зарегистрируйтесь, чтобы использовать все возможности приложения</p>
+        </div>
+        <form name="enterForm" novalidate ng-submit="doLogin()">
+            <div class="list">
+                <label class="item item-input aroundCenter80" style="margin-top: 5%; background-color: #fff !important;">
+                    <input type="email" placeholder="Email" ng-model="enter.email" name="email" ng-pattern="/[a-z0-9!.,#$%&'*+-/=?^_`{|}~]+@[a-z]+\.[a-z.]{2,}$/" required>
+                    <img src="img/exclamationPoint.png" ng-if="enterForm.email.$dirty && enterForm.email.$invalid && enterForm.email.$error.pattern" class="imagesCheckEmail animated">
+                    <img src="img/check.png" ng-if="enterForm.email.$dirty && !enterForm.email.$invalid && !enterForm.email.$error.pattern" class="imagesCheckEmail animated">
+                </label>
+                <label class="item item-input aroundCenter80" style="margin-top: 3%; background-color: #fff !important;">
+                    <input type="password" placeholder="Password" name="password" ng-model="enter.password" ng-minlength="6" required>
+                    <img src="img/exclamationPoint.png" ng-if="enterForm.password.$dirty && enterForm.password.$error.minlength" class="imagesCheckPassword animated">
+                    <img src="img/check.png" ng-if="enterForm.password.$dirty && !enterForm.password.$error.minlength && !enterForm.password.$error.required" class="imagesCheckPassword animated">
+                </label>
+                <div ng-if="enterForm.password.$dirty && enterForm.password.$error.minlength" class="warning animated">Пароль не менее 6 символов</div>
+                <li class="item item-checkbox aroundCenter80" style="background: rgba(255,255,255, 0); border: none; color: #5b3536">
+                    <label class="checkbox" style="left: 0% !important">
+                        <input type="checkbox" class="checkBox" ng-model="enter.check">
+                    </label>
+                    <p>Запомнить меня</p>
+                </li>
+            </div>
+            <div class="buttonCenter">
+                <button class="button around-hand" type="submit" ng-disabled="enterForm.email.$invalid || enterForm.email.$pristine || enterForm.email.$error.pattern || enterForm.password.$pristine || enterForm.password.$error.minlength">
+                <img src="img/hand.png" class="imageHand">
+                &nbsp;<b>Продолжить</b>&nbsp;&nbsp;&nbsp;
+                </button>
+            </div>
+        </form>
+        <br>
+        <br>
+        <div class="forgotRegister">
+            <button class="button around" style="color: #5b3536;" ng-click="openForgot()"><i class="icon-left ion-android-remove-circle"></i>&nbsp;
+               <b>Забыли пароль</b>
+            </button>
+            <button class="button around" style="color: #5b3536;" ng-click="openRegister()">
+            <i class="icon-left ion-person-add"></i>&nbsp;
+                <b>Регистрация</b>
+            </button>
+        </div>
+    </ion-content>
+</ion-modal-view>
