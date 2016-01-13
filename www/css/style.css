@@ -883,3 +883,21 @@ span {
   margin: 0 auto;
 }
 /* END testResults.html */
+
+
+/*  START personalArea.html */
+  .PA{
+    color: #5b3536; 
+    font-size: 1rem;
+    text-align: center;
+  }
+  .line{
+    border-right: 1px solid #5b3536;
+  }
+
+  .result{
+    padding-top: 14px;
+    padding-left: 18px;
+    font-size: 1.4rem;
+  }
+/* END personalArea.html */
