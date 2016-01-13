@@ -1,4 +1,4 @@
-adil.controller('DossierEndCtrl', function($scope, $ionicModal, $timeout, $stateParams, $http, $rootScope) {
+adil.controller('DossierEndCtrl', function($scope, $ionicModal, $timeout, $stateParams, $http, $rootScope, $location) {
   $http.get($rootScope.hostAdress + "/learnedieroglif/" + $rootScope.userData.user_id)
    .success(function(respons) {
             $scope.learnedieroglif = respons.count;

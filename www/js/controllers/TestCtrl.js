@@ -54,7 +54,7 @@ adil.controller('TestCtrl', function($scope, $ionicModal, $timeout, $stateParams
             test_id = parseInt(endTest.end_test) + 1;
             console.log("TestCtrl ELSE --- test_id", test_id);
             $http.get($rootScope.hostAdress + 'apitest/' + test_id).success(function(data) {
-                console.log($rootScope.hostAdress + 'apitest/' + test_id);
+                console.log("$rootScope.hostAdress + 'apitest/' + test_id", $rootScope.hostAdress + 'apitest/' + test_id);
 
                 console.log("TestCtrl --- data", data);
                 $scope.test_id_level = data.test[0].test_id_level;
@@ -65,9 +65,11 @@ adil.controller('TestCtrl', function($scope, $ionicModal, $timeout, $stateParams
                 test_id = data.test[0].test_id;
                 /*$scope.id_hieroglyphNext = parseInt($scope.id_hieroglyph) + 1;
                 test = parseInt($scope.id_hieroglyph) + 1;*/
+                if (test_id > endTest.end_test) {
+                        $location.path('app/testresults/' + $scope.test_id_level);
 
-
-                angular.forEach(data.vopros, function(value, key) {
+                } else {
+                    angular.forEach(data.vopros, function(value, key) {
                     if (!angular.isObject(value)) {
                         kolVoprosov[key] = (value);
                     } else {
@@ -86,6 +88,10 @@ adil.controller('TestCtrl', function($scope, $ionicModal, $timeout, $stateParams
                     }).error(function(respons) {
                         console.log("respons ERROR", respons);
                     });
+                };
+
+
+
 
             }).error(function(data) {
                 //error
@@ -229,26 +235,25 @@ adil.controller('TestCtrl', function($scope, $ionicModal, $timeout, $stateParams
 
     $scope.checkAllTests = function() {
         var allTests = [];
-    $http.get($rootScope.hostAdress + 'testall/' + $stateParams.id_level + '/' + $rootScope.userData.user_id)
-        .success(function(data){
-            allTests = data;
-            console.log("checkAllTests --- allTests", allTests);
+        $http.get($rootScope.hostAdress + 'testall/' + $stateParams.id_level + '/' + $rootScope.userData.user_id)
+            .success(function(data) {
+                allTests = data;
+                console.log("checkAllTests --- allTests", allTests);
 
-            angular.forEach(allTests, function(value, key) {
+                angular.forEach(allTests, function(value, key) {
                     // console.log("angular.forEach --- key, value", key, value);
 
-                if (value.is_test == "false") {
-                    // console.log("УРА!!! НАШЛОСЯЯЯЯЯЯ FALSE!!!!", key);
+                    if (value.is_test == "false") {
+                        // console.log("УРА!!! НАШЛОСЯЯЯЯЯЯ FALSE!!!!", key);
                         $location.path('app/testresults/' + $scope.test_id_level);
-                    // $scope.pathToResults = "#/app/testresults/";
-                } else {
+                        // $scope.pathToResults = "#/app/testresults/";
+                    } else {
                         $location.path('app/congratulations');
-                    // $scope.pathToResults = "#/app/congratulations/";
-                };
-            });
+                        // $scope.pathToResults = "#/app/congratulations/";
+                    };
+                });
 
-        }).error(function(data){
-        });
+            }).error(function(data) {});
     };
 
 });
