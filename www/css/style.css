@@ -7,10 +7,6 @@ p {
     line-height: 1;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4c7753dcfa33ae4185c8a9ea146085bf6696a61b
 /*START First screen*/
 .helloScreen {
     /*background: url(1.jpg);*/
@@ -433,13 +429,7 @@ p {
     right: 20px;
     margin: 0 auto;
     text-align: center;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     margin-top: 20px;
-=======
->>>>>>> 21d92adbc17bcfc7f56b630771a4d7b983f2425c
->>>>>>> 4c7753dcfa33ae4185c8a9ea146085bf6696a61b
   }
   .footer img{
     background-image: url(img/footer.png) !important;
@@ -892,3 +882,21 @@ span {
   margin: 0 auto;
 }
 /* END testResults.html */
+
+
+/*  START personalArea.html */
+  .PA{
+    color: #5b3536; 
+    font-size: 1rem;
+    text-align: center;
+  }
+  .line{
+    border-right: 1px solid #5b3536;
+  }
+
+  .result{
+    padding-top: 14px;
+    padding-left: 18px;
+    font-size: 1.4rem;
+  }
+/* END personalArea.html */
