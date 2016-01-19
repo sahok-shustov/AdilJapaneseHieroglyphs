@@ -42,13 +42,14 @@
         <form name="forgotForm" novalidate ng-submit="doForgot()">
             <div class="list">
                 <label class="item item-input aroundCenter80" style="margin-top: 5%; background-color: #fff !important">
-                    <input type="email" ng-model="reset.email" name="reset" placeholder="Email" ng-pattern="/[a-z0-9!.,#$%&'*+-/=?^_`{|}~]+@[a-z]+\.[a-z.]{2,}$/" required>
-                    <img src="img/exclamationPoint.png" ng-if="forgotForm.reset.$dirty && forgotForm.reset.$invalid && forgotForm.reset.$error.pattern" class="imagesCheckEmail animated">
-                    <img src="img/check.png" ng-if="forgotForm.reset.$dirty && !forgotForm.reset.$invalid && !forgotForm.reset.$error.pattern" class="imagesCheckEmail animated">
+                    <input type="text" name="reset" placeholder="Email" ng-model="reset.email" ng-pattern="/[a-z0-9!.,#$%&'*+-/=?^_`{|}~]+@[a-z]+\.[a-z.]{2,}$/" required>
+                    <img src="img/exclamationPoint.png" ng-if="forgotForm.reset.$touched && forgotForm.reset.$invalid && forgotForm.reset.$error.pattern" class="imagesCheckEmail animated">
+                    <img src="img/check.png" ng-if="forgotForm.reset.$touched && !forgotForm.reset.$invalid && !forgotForm.reset.$error.pattern" class="imagesCheckEmail animated">
                 </label>
             </div>
             <div class="buttonCenter">
-                <button class="button around-hand" style="margin-top: 0%; color: #5b3536; display: inline-flex" type="submit" ng-disabled="forgotForm.reset.$invalid || forgotForm.reset.$pristine || forgotForm.reset.$error.pattern"><img src="img/hand.png" class="imageHand">&nbsp;<b>Выслать пароль</b>&nbsp;&nbsp;</button>
+                <button class="button around-hand" style="margin-top: 0%; color: #5b3536; display: inline-flex" type="submit" ng-disabled="forgotForm.reset.$pristine">
+                    <img src="img/hand.png" class="imageHand">&nbsp;<b>Выслать пароль</b>&nbsp;&nbsp;</button>
             </div>
             <!-- <div class="padding"> -->
             <!-- <button class="button button-block aroundCenter80" style="width: 80%; color: #5b3536" type="submit" ng-disabled="forgotForm.reset.$invalid || forgotForm.reset.$pristine || forgotForm.reset.$error.pattern"><img src="img/hand.png" class="imagesHand"><b>Выслать пароль</b></button> -->

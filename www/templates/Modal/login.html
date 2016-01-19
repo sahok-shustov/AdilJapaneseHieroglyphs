@@ -13,15 +13,15 @@
             <div class="list">
                 <label class="item item-input aroundCenter80" style="margin-top: 5%; background-color: #fff !important;">
                     <input type="email" placeholder="Email" ng-model="enter.email" name="email" ng-pattern="/[a-z0-9!.,#$%&'*+-/=?^_`{|}~]+@[a-z]+\.[a-z.]{2,}$/" required>
-                    <img src="img/exclamationPoint.png" ng-if="enterForm.email.$dirty && enterForm.email.$invalid && enterForm.email.$error.pattern" class="imagesCheckEmail animated">
-                    <img src="img/check.png" ng-if="enterForm.email.$dirty && !enterForm.email.$invalid && !enterForm.email.$error.pattern" class="imagesCheckEmail animated">
+                    <img src="img/exclamationPoint.png" ng-if="enterForm.email.$touched && enterForm.email.$invalid && enterForm.email.$error.pattern" class="imagesCheckEmail animated">
+                    <img src="img/check.png" ng-if="enterForm.email.$touched && !enterForm.email.$invalid && !enterForm.email.$error.pattern" class="imagesCheckEmail animated">
                 </label>
                 <label class="item item-input aroundCenter80" style="margin-top: 3%; background-color: #fff !important;">
                     <input type="password" placeholder="Password" name="password" ng-model="enter.password" ng-minlength="6" required>
-                    <img src="img/exclamationPoint.png" ng-if="enterForm.password.$dirty && enterForm.password.$error.minlength" class="imagesCheckPassword animated">
-                    <img src="img/check.png" ng-if="enterForm.password.$dirty && !enterForm.password.$error.minlength && !enterForm.password.$error.required" class="imagesCheckPassword animated">
+                    <img src="img/exclamationPoint.png" ng-if="enterForm.password.$touched && enterForm.password.$error.minlength" class="imagesCheckPassword animated">
+                    <img src="img/check.png" ng-if="enterForm.password.$touched && !enterForm.password.$error.minlength && !enterForm.password.$error.required" class="imagesCheckPassword animated">
                 </label>
-                <div ng-if="enterForm.password.$dirty && enterForm.password.$error.minlength" class="warning animated">Пароль не менее 6 символов</div>
+                <div ng-if="enterForm.password.$touched && enterForm.password.$error.minlength" class="warning animated">Пароль не менее 6 символов</div>
                 <li class="item item-checkbox aroundCenter80" style="background: rgba(255,255,255, 0); border: none; color: #5b3536">
                     <label class="checkbox" style="left: 0% !important">
                         <input type="checkbox" class="checkBox" ng-model="enter.check">

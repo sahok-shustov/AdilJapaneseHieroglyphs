@@ -1,19 +1,23 @@
-adil.controller('LevelsOfTrainingCtrl', function($scope, $http, $ionicModal, $timeout, $stateParams, $rootScope, $ionicPopup) {
+adil.controller('LevelsOfTrainingCtrl', function($scope, $rootScope, $http, $ionicModal, $timeout, $stateParams, $ionicPopup) {
+    $timeout(function() {
+        $rootScope.checkToInet();
+    });
+
     $scope.circles = [];
     if ($rootScope.userData) {
         $http.get($rootScope.hostAdress + 'level/' + $rootScope.userData.user_id)
-        .success(function(data) {
-            $scope.circles = data;
-            $scope.circles[0].level_user_id_level = "1";
-            console.log($scope.circles, "return array");
-        }).error(function(data) {});
-    }else{
-       $http.get($rootScope.hostAdress + 'circles')
-        .success(function(data) {
-            $scope.circles = data;
-            $scope.circles[0].level_user_id_level = "1";
-            console.log($scope.circles, "return array");
-        }).error(function(data) {}); 
+            .success(function(data) {
+                $scope.circles = data;
+                $scope.circles[0].level_user_id_level = "1";
+                console.log($scope.circles, "return array");
+            }).error(function(data) {});
+    } else {
+        $http.get($rootScope.hostAdress + 'circles')
+            .success(function(data) {
+                $scope.circles = data;
+                $scope.circles[0].level_user_id_level = "1";
+                console.log($scope.circles, "return array");
+            }).error(function(data) {});
     };
 
     $scope.showAlert = function() {

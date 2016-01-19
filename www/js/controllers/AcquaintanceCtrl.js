@@ -1,4 +1,4 @@
-adil.controller('AcquaintanceCtrl', function($scope, $ionicModal, $timeout, $stateParams, $ionicSlideBoxDelegate) {
+adil.controller('AcquaintanceCtrl', function($scope, $rootScope, $ionicModal, $timeout, $stateParams, $ionicSlideBoxDelegate) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -6,6 +6,10 @@ adil.controller('AcquaintanceCtrl', function($scope, $ionicModal, $timeout, $sta
     // listen for the $ionicView.enter event:
     //$scope.$on('$ionicView.enter', function(e) {
     //});
+    $timeout(function() {
+        $rootScope.checkToInet();
+    });
+
     console.log("AcquaintanceCtrl");
 
     $scope.buttons = [{
@@ -31,13 +35,20 @@ adil.controller('AcquaintanceCtrl', function($scope, $ionicModal, $timeout, $sta
     };
 
     $scope.nextSlide = function() {
-        $scope.currentSlide = $ionicSlideBoxDelegate.currentIndex() +1;
-    	$scope.slide($scope.currentSlide);
+        $scope.currentSlide = $ionicSlideBoxDelegate.currentIndex() + 1;
+        $scope.slide($scope.currentSlide);
     };
 
     $scope.previousSlide = function() {
-        $scope.currentSlide = $ionicSlideBoxDelegate.currentIndex() -1;
-    	$scope.slide($scope.currentSlide);
+        $scope.currentSlide = $ionicSlideBoxDelegate.currentIndex() - 1;
+        $scope.slide($scope.currentSlide);
+    };
+
+    $scope.showAlertIsOffline = function() {
+        var alertPopup = $ionicPopup.alert({
+            title: 'Нет подключения к сети!',
+            template: 'Для корректной работы приложения включите Wifi или моб. интернет.'
+        });
     };
 
 });

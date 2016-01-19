@@ -38,10 +38,10 @@
             <a ng-href=""  class="button around-hand" ng-hide="id_hieroglyph >= ieroglif[0].level_count_ieroglif" ng-click="forChecking(); nextTest(id_hieroglyph); scrollSmallToTop()" style="margin-top: 10%; color: #5b3536;"><img src="img/hand.png" class="imageHand">&nbsp;<b>Далее</b>&nbsp;&nbsp;</a>
         </div>
         <div class="buttonCenter">
-            <a ng-href=""  class="button around-hand" ng-show="id_hieroglyph >= ieroglif[0].level_count_ieroglif" ng-click="forChecking(); checkAllTests()" style="margin-top: 10%; color: #5b3536;"><img src="img/hand.png" class="imageHand">&nbsp;<b>Завершить тест</b>&nbsp;&nbsp;</a>
+            <a ng-href=""  class="button around-hand" ng-show="id_hieroglyph == ieroglif[0].level_count_ieroglif" ng-click="forChecking(); checkAllTests()" style="margin-top: 10%; color: #5b3536;"><img src="img/hand.png" class="imageHand">&nbsp;<b>Завершить тест</b>&nbsp;&nbsp;</a>
         </div>
         <div class="buttonCenter">
-            <a class="button around" ng-href="#/app/testresults/{{ test_id_level }}" style="margin-top: 3%; color: #5b3536;">&nbsp;<b>Пропустить тест и продолжить</b>&nbsp;</a>
+            <a class="button around" ng-href="#/app/levelsoftraining" style="margin-top: 3%; color: #5b3536;">&nbsp;<b>Сохранить тест и продолжить</b>&nbsp;</a>
         </div>
 
          <!-- <div class="buttonCenter">

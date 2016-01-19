@@ -1,4 +1,4 @@
-<ion-view cache-view="true" view-title="Уровни обучения">
+<ion-view cache-view="false" view-title="Уровни обучения">
     <ion-content style="background-image: url(img/content.jpg); background-size: cover">
         <div class="blocklevels" ng-repeat="circle in circles">
             <a ng-if="circle.level_id == circle.level_user_id_level" ng-href="#/app/hieroglyphslevel/{{circle.level_id}}">

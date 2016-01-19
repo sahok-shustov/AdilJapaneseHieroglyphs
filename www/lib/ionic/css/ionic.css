@@ -8368,11 +8368,12 @@ progress {
         color: #fff; }
 
 .button-small {
-  padding: 2px 4px 1px;
-  min-width: 28px;
-  min-height: 30px;
-  font-size: 12px;
-  line-height: 26px; }
+    padding: 2px 4px 1px;
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 12px;
+    line-height: 26px; 
+  }
   .button-small .icon:before,
   .button-small.icon:before,
   .button-small.icon-left:before,

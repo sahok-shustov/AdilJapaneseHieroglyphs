@@ -19,14 +19,14 @@
                 </ion-slide>
             </ion-slide-box>
             <div class="aroundButtonCenter">
-                <button class="button button-clear button-small button-round" style="opacity: 1" ng-click="previousSlide()">
+                <button class="button button-clear button-round" style="opacity: 1" ng-click="previousSlide()">
                     <i class="ion-chevron-left arrow"></i>
                 </button>
 
                 <button class="button button-small button-round" ng-init="slide(0)" ng-repeat="button in buttons" ng-class="{'activeSlide': $index === current}" ng-click="slide($index)">{{ button.name }}
                 </button>
                 
-                <button class="button button-clear button-small button-round" style="opacity: 1" ng-click="nextSlide()">
+                <button class="button button-clear button-round" style="opacity: 1" ng-click="nextSlide()">
                     <i class="ion-chevron-right arrow"></i>
                 </button>
             </div>

@@ -27,14 +27,14 @@ p {
     height: 100%;
 }
 .button-round {
-    align: center;
+    /*align: center;*/
     display: inline-block;
     margin: 0 auto;
-    width: 5%;
-    /*background: url(http://subtlepatterns.com/patterns/extra_clean_paper.png);*/
-    /*cursor: pointer;*/
+    /*width: 5%;*/
+    /* cursor: pointer; */
     border-radius: 100%;
     opacity: 0.3;
+    vertical-align: middle;
 }
 .activeSlide {
     opacity: 1;
@@ -361,7 +361,7 @@ p {
   }
   .contentWrite{
     border-top: 5px solid #fff;
-    text-align: justify;
+    text-align: left;
     padding: 10%;
     width: 90%;
     margin: 0 auto;
@@ -373,7 +373,7 @@ p {
   }
   .contentHistory{
     border-top: 5px solid #fff;
-    text-align: justify;
+    text-align: center;
     padding: 8%;
     width: 82%;
     margin: 0 auto;

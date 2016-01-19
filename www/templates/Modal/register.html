@@ -60,26 +60,26 @@
             <div class="list">
                 <label class="item item-input aroundCenter80" style="margin-top: 5%; background-color: #fff !important;">
                     <input type="text" placeholder="Имя" name="userName" ng-model="register.name" ng-pattern="/[A-Za-zА-Яа-яЁё]+$/" required>
-                    <img src="img/exclamationPoint.png" ng-if="registerForm.userName.$dirty && registerForm.userName.$invalid && registerForm.userName.$error.pattern" class="imagesCheckName animated">
-                    <img src="img/check.png" ng-if="registerForm.userName.$dirty && !registerForm.userName.$invalid && !registerForm.userName.$error.pattern" class="imagesCheckName animated">
+                    <img src="img/exclamationPoint.png" ng-if="registerForm.userName.$touched && registerForm.userName.$invalid && registerForm.userName.$error.pattern" class="imagesCheckName animated">
+                    <img src="img/check.png" ng-if="registerForm.userName.$touched && !registerForm.userName.$invalid && !registerForm.userName.$error.pattern" class="imagesCheckName animated">
                 </label>
                 <label class="item item-input aroundCenter80" style="margin-top: 3%; background-color: #fff !important;">
                     <input type="email" placeholder="Почтовый ящик" name="email" ng-model="register.email" ng-pattern="/[a-z0-9!.,#$%&'*+-/=?^_`{|}~]+@[a-z]+\.[a-z.]{2,}$/" required>
-                    <img src="img/exclamationPoint.png" ng-if="registerForm.email.$dirty && registerForm.email.$invalid && registerForm.email.$error.pattern" class="imagesCheckEmail animated">
-                    <img src="img/check.png" ng-if="registerForm.email.$dirty && !registerForm.email.$invalid && !registerForm.email.$error.pattern" class="imagesCheckEmail animated">
+                    <img src="img/exclamationPoint.png" ng-if="registerForm.email.$touched && registerForm.email.$invalid && registerForm.email.$error.pattern" class="imagesCheckEmail animated">
+                    <img src="img/check.png" ng-if="registerForm.email.$touched && !registerForm.email.$invalid && !registerForm.email.$error.pattern" class="imagesCheckEmail animated">
                 </label>
                 <label class="item item-input aroundCenter80" style="margin-top: 3%; background-color: #fff !important;">
                     <input type="password" placeholder="Пароль" name="password" ng-model="register.password" ng-minlength="6" ng-change="registerComparingPasswords()" required>
-                    <img src="img/exclamationPoint.png" ng-if="registerForm.password.$dirty && registerForm.password.$error.minlength" class="imagesCheckPassword animated">
-                    <img src="img/check.png" ng-if="registerForm.password.$dirty && !registerForm.password.$error.minlength && !registerForm.password.$error.required" class="imagesCheckPassword animated">
+                    <img src="img/exclamationPoint.png" ng-if="registerForm.password.$touched && registerForm.password.$error.minlength" class="imagesCheckPassword animated">
+                    <img src="img/check.png" ng-if="registerForm.password.$touched && !registerForm.password.$error.minlength && !registerForm.password.$error.required" class="imagesCheckPassword animated">
                 </label>
-                <div ng-if="registerForm.password.$dirty && registerForm.password.$error.minlength" class="warning animated">Пароль не менее 6 символов</div>
+                <div ng-if="registerForm.password.$touched && registerForm.password.$error.minlength" class="warning animated">Пароль не менее 6 символов</div>
                 <label class="item item-input aroundCenter80" style="margin-top: 3%; background-color: #fff !important;">
                     <input type="password" placeholder="Подтвердите пароль" name="confirmPassword" ng-model="register.confirmPassword" ng-change="registerComparingPasswords()" required>
-                    <img src="img/exclamationPoint.png" ng-if="registerForm.confirmPassword.$dirty && notEqual" class="imagesCheckPassword animated">
-                    <img src="img/check.png" ng-if="registerForm.confirmPassword.$dirty && equal" class="imagesCheckPassword animated">
+                    <img src="img/exclamationPoint.png" ng-if="registerForm.confirmPassword.$touched && notEqual" class="imagesCheckPassword animated">
+                    <img src="img/check.png" ng-if="registerForm.confirmPassword.$touched && equal" class="imagesCheckPassword animated">
                 </label>
-                <div ng-if="registerForm.confirmPassword.$dirty && notEqual" class="warning animated">Пароли не совпадают</div>
+                <div ng-if="registerForm.confirmPassword.$touched && notEqual" class="warning animated">Пароли не совпадают</div>
             </div>
             <div class="buttonCenter">
                 <button class="button around-hand" style="margin-top: 10%; color: #5b3536; display: inline-flex" type="submit" ng-disabled="registerForm.email.$error.required || registerForm.email.$invalid || registerForm.userName.$pristine || registerForm.email.$error.pattern || registerForm.email.$pristine || registerForm.password.$pristine || registerForm.password.$error.minlength || registerForm.confirmPassword.$pristine || notEqual"><img src="img/hand.png" class="imageHand">&nbsp;<b>Зарегистрироваться</b>&nbsp;&nbsp;</button>

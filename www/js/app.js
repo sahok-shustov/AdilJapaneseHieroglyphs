@@ -8,8 +8,9 @@ var adil = angular.module('adil', ['ionic', 'ngCordova']);
 
 adil.run(function($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function() {
-        $rootScope.device = ionic.Platform.device();
-        console.log("adil.run --- device", device);
+        // $rootScope.device = ionic.Platform.device();
+        // console.log("adil.run --- device", device);
+
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
         if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -21,7 +22,7 @@ adil.run(function($ionicPlatform, $rootScope) {
             StatusBar.styleDefault();
         }
     });
-})
+});
 
 adil.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     $ionicConfigProvider.navBar.alignTitle('center');
@@ -55,7 +56,7 @@ adil.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
             }
         })
         .state('app.levelsoftraining', {
-            cache: true,
+            cache: false,
             url: '/levelsoftraining',
             views: {
                 'menuContent': {

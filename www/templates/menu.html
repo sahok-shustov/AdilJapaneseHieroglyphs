@@ -35,10 +35,10 @@
                     <ion-item class="item item-icon-left" menu-close ng-href="#/app/personalarea" ng-show="menuEnterString" style="font-size: 4vmin; line-height: 1;">
                         <i class="icon ion-key"></i> Личный кабинет
                     </ion-item>
-                    <ion-item class="item item-icon-left" menu-close ng-href="#/app/test/:id_level" style="font-size: 4vmin; line-height: 1;">
+                    <ion-item class="item item-icon-left" menu-close ng-href="#/app/test/:id_level" ng-show="menuEnterString" style="font-size: 4vmin; line-height: 1;">
                         <i class="icon ion-clipboard"></i> Тест
                     </ion-item>
-                    <ion-item menu-close href="#/app/congratulations/:id_level">Поздравляем!!!
+                    <ion-item class="item item-icon-left" menu-close href="#/app/congratulations/:id_level" ng-show="menuEnterString"> <i class="icon ion-ribbon-a"></i> Поздравляем!!!
                     </ion-item>
                     <!-- <ion-item class="item item-icon-left" menu-close href="#/app/info">
                     <i class="icon ion-information-circled"></i> О сервисе

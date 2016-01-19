@@ -3,8 +3,55 @@ adil.controller('MainCtrl', function($scope, $rootScope, $ionicModal, $timeout, 
     // when they are recreated or on app start, instead of every page change.
     // To listen for when this page is active (for example, to refresh data),
     // listen for the $ionicView.enter event:
-    //$scope.$on('$ionicView.enter', function(e) {
-    //});
+    /*$scope.$on('$ionicView.enter', function(e) {
+        $rootScope.inet = $cordovaNetwork.getNetwork();
+        $rootScope.isOnline = $cordovaNetwork.isOnline();
+        $rootScope.isOffline = $cordovaNetwork.isOffline();
+
+        if ($rootScope.isOffline) {
+            $scope.showAlertIsOffline();
+        };
+    });*/
+    /*document.addEventListener("deviceready", function() {
+
+        $rootScope.inet = $cordovaNetwork.getNetwork();
+        $rootScope.isOnline = $cordovaNetwork.isOnline();
+        $rootScope.isOffline = $cordovaNetwork.isOffline();
+
+        if ($rootScope.isOffline) {
+            $rootScope.showAlertIsOffline();
+        };
+        // listen for Online event
+        $rootScope.$on('$cordovaNetwork:online', function(event, networkState) {
+                var onlineState = networkState;
+            });
+            // listen for Offline event
+        $rootScope.$on('$cordovaNetwork:offline', function(event, networkState) {
+            var offlineState = networkState;
+        });
+    }, false);*/
+
+    $rootScope.checkToInet = function() {
+        document.addEventListener("deviceready", function() {
+
+        $rootScope.inet = $cordovaNetwork.getNetwork();
+        $rootScope.isOnline = $cordovaNetwork.isOnline();
+        $rootScope.isOffline = $cordovaNetwork.isOffline();
+
+        if ($rootScope.isOffline) {
+            $rootScope.showAlertIsOffline();
+        };
+        // listen for Online event
+        $rootScope.$on('$cordovaNetwork:online', function(event, networkState) {
+                var onlineState = networkState;
+            });
+            // listen for Offline event
+        $rootScope.$on('$cordovaNetwork:offline', function(event, networkState) {
+            var offlineState = networkState;
+        });
+    }, false);
+    }
+
     $rootScope.hostAdress = "http://japan.dev-topsu.ru/";
 
     // Autoran function
@@ -117,6 +164,7 @@ adil.controller('MainCtrl', function($scope, $rootScope, $ionicModal, $timeout, 
                 if (data[0] == "Пользователь не найден!") {
                     console.log("doLogin --- success --- Пользователь не найден!", data);
                     $scope.showAlertLogin();
+                    $setUntouched();
                     //console.log("$scope.showAlertLoginEmail()");
                     return false;
                 } else if (data[0] == null) {
@@ -223,12 +271,13 @@ adil.controller('MainCtrl', function($scope, $rootScope, $ionicModal, $timeout, 
                 submit: true,
                 email: $scope.reset.email,
             }).success(function(data) {
+                console.log("doForgot", data);
                 $scope.successWindow = true;
                 $scope.showAlertForgotPassword();
-                    // $timeout close attention window automatically within 3.500 second
+                // $timeout close attention window automatically within 3.500 second
                 $timeout(function() {
                     $scope.successWindow = false;
-                    $scope.reset.email = null;
+                    $scope.reset.email = false;
                 }, 3500);
                 //success post request
             }).error(function(data) {
@@ -332,7 +381,7 @@ adil.controller('MainCtrl', function($scope, $rootScope, $ionicModal, $timeout, 
         });
     };
 
-    $scope.showAlertIsOffline = function() {
+    $rootScope.showAlertIsOffline = function() {
         var alertPopup = $ionicPopup.alert({
             title: 'Нет подключения к сети!',
             template: 'Для корректной работы приложения включите Wifi или моб. интернет.'

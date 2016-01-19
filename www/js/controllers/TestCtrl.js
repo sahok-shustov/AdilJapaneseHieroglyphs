@@ -1,4 +1,7 @@
 adil.controller('TestCtrl', function($scope, $ionicModal, $timeout, $stateParams, $ionicScrollDelegate, $http, $rootScope, $location) {
+    $timeout(function() {
+        $rootScope.checkToInet();
+    });
 
     var currentAnswer = {};
     var otvetu = [];
@@ -20,31 +23,36 @@ adil.controller('TestCtrl', function($scope, $ionicModal, $timeout, $stateParams
 
                 $scope.test = data.vopros;
                 $scope.id_hieroglyph = data.test[0].test_id_ieroglif;
-                $scope.count_ieroglif = data.test[0].count_ieroglif;
+                $scope.count_ieroglif = parseInt(data.test[0].count_ieroglif);
                 test_id = data.test[0].test_id;
                 /*$scope.id_hieroglyphNext = parseInt($scope.id_hieroglyph) + 1;
                 test = parseInt($scope.id_hieroglyph) + 1;*/
 
 
-                angular.forEach(data.vopros, function(value, key) {
-                    if (!angular.isObject(value)) {
-                        kolVoprosov[key] = (value);
-                    } else {
-                        id_Otvetov[value.vopros_id] = value.vopros_id;
-                        console.log("id_Otvetov", id_Otvetov);
-                    }
-                });
-                console.log("kolVoprosov", kolVoprosov);
+                if (test_id > $scope.count_ieroglif) {
+                    $location.path('app/testresults/' + $scope.test_id_level);
 
-                $http.get($rootScope.hostAdress + 'ieroglif/' + test_id)
-                    .success(function(respons) {
-                        console.log("respons", respons);
-                        $scope.ieroglif = respons;
-                        console.log("respons $scope.ieroglif", $scope.ieroglif);
-
-                    }).error(function(respons) {
-                        console.log("respons ERROR", respons);
+                } else {
+                    angular.forEach(data.vopros, function(value, key) {
+                        if (!angular.isObject(value)) {
+                            kolVoprosov[key] = (value);
+                        } else {
+                            id_Otvetov[value.vopros_id] = value.vopros_id;
+                            console.log("id_Otvetov", id_Otvetov);
+                        };
                     });
+                    console.log("kolVoprosov", kolVoprosov);
+
+                    $http.get($rootScope.hostAdress + 'ieroglif/' + test_id)
+                        .success(function(respons) {
+                            console.log("respons", respons);
+                            $scope.ieroglif = respons;
+                            console.log("respons $scope.ieroglif", $scope.ieroglif);
+
+                        }).error(function(respons) {
+                            console.log("respons ERROR", respons);
+                        });
+                };
 
             }).error(function(data) {
                 //error
@@ -61,37 +69,36 @@ adil.controller('TestCtrl', function($scope, $ionicModal, $timeout, $stateParams
 
                 $scope.test = data.vopros;
                 $scope.id_hieroglyph = data.test[0].test_id_ieroglif;
-                $scope.count_ieroglif = data.test[0].count_ieroglif;
+                $scope.count_ieroglif = parseInt(data.test[0].count_ieroglif);
                 test_id = data.test[0].test_id;
+                console.log("TestCtrl $scope.count_ieroglif", $scope.count_ieroglif);
+
                 /*$scope.id_hieroglyphNext = parseInt($scope.id_hieroglyph) + 1;
                 test = parseInt($scope.id_hieroglyph) + 1;*/
-                if (test_id > endTest.end_test) {
-                        $location.path('app/testresults/' + $scope.test_id_level);
-
+                if (test_id > $scope.count_ieroglif) {
+                    $location.path('app/testresults/' + $scope.test_id_level);
+                    console.log("test_id > $scope.count_ieroglif", test_id > $scope.count_ieroglif);
                 } else {
                     angular.forEach(data.vopros, function(value, key) {
-                    if (!angular.isObject(value)) {
-                        kolVoprosov[key] = (value);
-                    } else {
-                        id_Otvetov[value.vopros_id] = value.vopros_id;
-                        console.log("id_Otvetov", id_Otvetov);
-                    }
-                });
-                console.log("kolVoprosov", kolVoprosov);
-
-                $http.get($rootScope.hostAdress + 'ieroglif/' + test_id)
-                    .success(function(respons) {
-                        console.log("respons", respons);
-                        $scope.ieroglif = respons;
-                        console.log("respons $scope.ieroglif", $scope.ieroglif);
-
-                    }).error(function(respons) {
-                        console.log("respons ERROR", respons);
+                        if (!angular.isObject(value)) {
+                            kolVoprosov[key] = (value);
+                        } else {
+                            id_Otvetov[value.vopros_id] = value.vopros_id;
+                            console.log("id_Otvetov", id_Otvetov);
+                        };
                     });
+                    console.log("kolVoprosov", kolVoprosov);
+
+                    $http.get($rootScope.hostAdress + 'ieroglif/' + test_id)
+                        .success(function(respons) {
+                            console.log("respons", respons);
+                            $scope.ieroglif = respons;
+                            console.log("respons $scope.ieroglif", $scope.ieroglif);
+
+                        }).error(function(respons) {
+                            console.log("respons ERROR", respons);
+                        });
                 };
-
-
-
 
             }).error(function(data) {
                 //error
@@ -123,9 +130,10 @@ adil.controller('TestCtrl', function($scope, $ionicModal, $timeout, $stateParams
         }
         return is;
     };
+
+
     var varOtveta = [];
     var rezTest = {};
-
 
     $scope.addToCurrentAnswer = function(vopros_id, otvet_id, cheked) {
         if (cheked) {
@@ -235,6 +243,7 @@ adil.controller('TestCtrl', function($scope, $ionicModal, $timeout, $stateParams
 
     $scope.checkAllTests = function() {
         var allTests = [];
+        var goToCongratulations = true;
         $http.get($rootScope.hostAdress + 'testall/' + $stateParams.id_level + '/' + $rootScope.userData.user_id)
             .success(function(data) {
                 allTests = data;
@@ -245,11 +254,13 @@ adil.controller('TestCtrl', function($scope, $ionicModal, $timeout, $stateParams
 
                     if (value.is_test == "false") {
                         // console.log("УРА!!! НАШЛОСЯЯЯЯЯЯ FALSE!!!!", key);
-                        $location.path('app/testresults/' + $scope.test_id_level);
-                        // $scope.pathToResults = "#/app/testresults/";
-                    } else {
+                        goToCongratulations = false;
+                    };
+
+                    if (goToCongratulations) {
                         $location.path('app/congratulations');
-                        // $scope.pathToResults = "#/app/congratulations/";
+                    } else {
+                        $location.path('app/testresults/' + $scope.test_id_level);
                     };
                 });
 
